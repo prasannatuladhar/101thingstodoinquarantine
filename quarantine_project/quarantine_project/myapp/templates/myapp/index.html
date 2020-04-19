@@ -1,0 +1,23 @@
+{%  extends 'myapp/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+  
+   <div class="text-center">
+    <p class="h4 mt-4">{{ things.title }}</p>   
+    {% if things.title %}
+    <a href="{% url 'next' things.id %}"><button type="button" class="btn btn-secondary m-4 btn-lg">Next Activity</button></a>
+    {% endif %}
+    <img src="{{ things.image.url }}" class="img-fluid" alt="{{things.title }}"  width="600">
+     <div class="mt-2">
+       <a href="https://twitter.com/pr_tuladhar"><img src="{% static 'twitter.png' %}" width="30"> </a>
+       <a href="https://github.com/prasannatuladhar/101thingstodoinquarantine"><img src="{% static 'git.png' %}" width="30"> </a>
+      </div>
+   </div>
+   
+ 
+    
+
+{% endblock %}
